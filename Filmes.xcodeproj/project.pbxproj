@@ -13,6 +13,8 @@
 		FDF01E282767CC2A00FC10E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF01E262767CC2A00FC10E5 /* Main.storyboard */; };
 		FDF01E2A2767CC2D00FC10E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF01E292767CC2D00FC10E5 /* Assets.xcassets */; };
 		FDF01E2D2767CC2D00FC10E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF01E2B2767CC2D00FC10E5 /* LaunchScreen.storyboard */; };
+		FDF01E352767CDD300FC10E5 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF01E342767CDD300FC10E5 /* Filme.swift */; };
+		FDF01E372767DCB100FC10E5 /* FilmeCelula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF01E362767DCB100FC10E5 /* FilmeCelula.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		FDF01E292767CC2D00FC10E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDF01E2C2767CC2D00FC10E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDF01E2E2767CC2D00FC10E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDF01E342767CDD300FC10E5 /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
+		FDF01E362767DCB100FC10E5 /* FilmeCelula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeCelula.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				FDF01E202767CC2A00FC10E5 /* AppDelegate.swift */,
 				FDF01E222767CC2A00FC10E5 /* SceneDelegate.swift */,
 				FDF01E242767CC2A00FC10E5 /* ViewController.swift */,
+				FDF01E362767DCB100FC10E5 /* FilmeCelula.swift */,
+				FDF01E342767CDD300FC10E5 /* Filme.swift */,
 				FDF01E262767CC2A00FC10E5 /* Main.storyboard */,
 				FDF01E292767CC2D00FC10E5 /* Assets.xcassets */,
 				FDF01E2B2767CC2D00FC10E5 /* LaunchScreen.storyboard */,
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF01E252767CC2A00FC10E5 /* ViewController.swift in Sources */,
+				FDF01E372767DCB100FC10E5 /* FilmeCelula.swift in Sources */,
 				FDF01E212767CC2A00FC10E5 /* AppDelegate.swift in Sources */,
 				FDF01E232767CC2A00FC10E5 /* SceneDelegate.swift in Sources */,
+				FDF01E352767CDD300FC10E5 /* Filme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
