@@ -3,6 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,26 +24,44 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxl-eu-SCD">
-                                            <rect key="frame" x="20" y="8" width="84" height="84"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxl-eu-SCD">
+                                            <rect key="frame" x="8" y="8" width="84" height="84"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="84" id="QKu-l9-V4T"/>
+                                                <constraint firstAttribute="height" constant="84" id="RTL-UN-AYx"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hk-kr-y8z">
-                                            <rect key="frame" x="112" y="11" width="282" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rq-Wq-xdp">
-                                            <rect key="frame" x="112" y="41" width="282" height="15"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
-                                            <color key="textColor" systemColor="secondaryLabelColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="olg-c8-jRC">
+                                            <rect key="frame" x="112" y="28" width="47" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hk-kr-y8z">
+                                                    <rect key="frame" x="0.0" y="0.0" width="47" height="21.666666666666668"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rq-Wq-xdp">
+                                                    <rect key="frame" x="0.0" y="29.666666666666661" width="47" height="14.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dxl-eu-SCD" firstAttribute="leading" secondItem="GAe-MI-hUb" secondAttribute="leading" constant="8" id="4pv-iz-deI"/>
+                                        <constraint firstItem="dxl-eu-SCD" firstAttribute="centerY" secondItem="GAe-MI-hUb" secondAttribute="centerY" id="JWf-p6-scd"/>
+                                        <constraint firstItem="olg-c8-jRC" firstAttribute="centerY" secondItem="GAe-MI-hUb" secondAttribute="centerY" id="QwZ-k5-yos"/>
+                                        <constraint firstItem="olg-c8-jRC" firstAttribute="leading" secondItem="dxl-eu-SCD" secondAttribute="trailing" constant="20" id="p0s-pD-whb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descricaoLabel" destination="6Rq-Wq-xdp" id="H4c-KX-B0q"/>
+                                    <outlet property="filmeImageView" destination="dxl-eu-SCD" id="6aB-7g-nGK"/>
+                                    <outlet property="tituloLabel" destination="0Hk-kr-y8z" id="jIa-SP-zuo"/>
+                                    <segue destination="hH7-ZF-FVr" kind="show" identifier="detalheFilme" id="Dae-Em-d0B"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -54,7 +73,60 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnJ-ZE-dxw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092.753623188406" y="30.978260869565219"/>
+            <point key="canvasLocation" x="1914" y="31"/>
+        </scene>
+        <!--Detalhes Filme View Controller-->
+        <scene sceneID="yvq-7V-IcI">
+            <objects>
+                <viewController id="hH7-ZF-FVr" customClass="DetalhesFilmeViewController" customModule="Filmes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xsz-Iy-SaE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filme2" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5NS-qC-Cfy">
+                                <rect key="frame" x="20" y="64" width="374" height="394"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="FSs-1J-fgM"/>
+                                    <constraint firstAttribute="height" constant="394" id="OVf-MU-Y29"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fr-Nb-2vP">
+                                <rect key="frame" x="20" y="466" width="374" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDT-5n-302">
+                                <rect key="frame" x="20" y="498" width="374" height="17.666666666666629"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rrd-Zc-vHb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HDT-5n-302" firstAttribute="leading" secondItem="Rrd-Zc-vHb" secondAttribute="leading" constant="20" id="RBs-tw-Dzg"/>
+                            <constraint firstItem="Rrd-Zc-vHb" firstAttribute="trailing" secondItem="5NS-qC-Cfy" secondAttribute="trailing" constant="20" id="RwB-br-zjH"/>
+                            <constraint firstItem="Rrd-Zc-vHb" firstAttribute="trailing" secondItem="5Fr-Nb-2vP" secondAttribute="trailing" constant="20" id="Z9U-iE-8A1"/>
+                            <constraint firstItem="5NS-qC-Cfy" firstAttribute="leading" secondItem="Rrd-Zc-vHb" secondAttribute="leading" constant="20" id="dgW-bP-Lf8"/>
+                            <constraint firstItem="5Fr-Nb-2vP" firstAttribute="top" secondItem="5NS-qC-Cfy" secondAttribute="bottom" constant="8" symbolic="YES" id="e0y-sc-WkU"/>
+                            <constraint firstItem="5Fr-Nb-2vP" firstAttribute="leading" secondItem="Rrd-Zc-vHb" secondAttribute="leading" constant="20" id="ge4-Zf-1Hn"/>
+                            <constraint firstItem="5NS-qC-Cfy" firstAttribute="top" secondItem="Rrd-Zc-vHb" secondAttribute="top" constant="20" id="hhx-BR-Sh3"/>
+                            <constraint firstItem="Rrd-Zc-vHb" firstAttribute="trailing" secondItem="HDT-5n-302" secondAttribute="trailing" constant="20" id="vik-2i-UkS"/>
+                            <constraint firstItem="HDT-5n-302" firstAttribute="top" secondItem="5Fr-Nb-2vP" secondAttribute="bottom" constant="8" symbolic="YES" id="zsh-OW-xK8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="66h-eX-JBi"/>
+                    <connections>
+                        <outlet property="descricaoLabel" destination="HDT-5n-302" id="0xu-O0-YsJ"/>
+                        <outlet property="filmeImageView" destination="5NS-qC-Cfy" id="2B1-Nw-p9J"/>
+                        <outlet property="tituloLabel" destination="5Fr-Nb-2vP" id="RzM-g1-XKW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IkS-70-Z4M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2634.7826086956525" y="30.978260869565219"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uuh-bV-HFY">
@@ -76,6 +148,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="filme2" width="252.66667175292969" height="268.33334350585938"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

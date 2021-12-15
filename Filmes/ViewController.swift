@@ -16,34 +16,36 @@ class ViewController: UITableViewController {
         
         var filme: Filme
             
-        filme = Filme(titulo: "007 - Spectre", descricao: "descricao 1", imagem: #imageLiteral(resourceName: "filme1"))
+        filme = Filme(titulo: "007 - Spectre", descricao: "Descrição 1", imagem: #imageLiteral(resourceName: "filme1"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "Star Wars", descricao: "descricao 2", imagem: #imageLiteral(resourceName: "filme2"))
+        filme = Filme(titulo: "Star Wars",
+                      descricao: "https://www.youtube.com/watch?v=4r0287tUEgk",
+                      imagem: #imageLiteral(resourceName: "filme2"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "Impacto Mortal", descricao: "descricao 3", imagem: #imageLiteral(resourceName: "filme3"))
+        filme = Filme(titulo: "Impacto Mortal", descricao: "Descrição 3", imagem: #imageLiteral(resourceName: "filme3"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "Deadpool", descricao: "descricao 4", imagem: #imageLiteral(resourceName: "filme4"))
+        filme = Filme(titulo: "Deadpool", descricao: "Descrição 4", imagem: #imageLiteral(resourceName: "filme4"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "O Regresso", descricao: "descricao 5", imagem: #imageLiteral(resourceName: "filme5"))
+        filme = Filme(titulo: "O Regresso", descricao: "Descrição 5", imagem: #imageLiteral(resourceName: "filme5"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "A Herdeira", descricao: "descricao 6", imagem: #imageLiteral(resourceName: "filme6"))
+        filme = Filme(titulo: "A Herdeira", descricao: "Descrição 6", imagem: #imageLiteral(resourceName: "filme6"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "Caçadores de emoção", descricao: "descricao 7", imagem: #imageLiteral(resourceName: "filme7"))
+        filme = Filme(titulo: "Caçadores de emoção", descricao: "Descrição 7", imagem: #imageLiteral(resourceName: "filme7"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "Regresso do mal", descricao: "descricao 8", imagem: #imageLiteral(resourceName: "filme8"))
+        filme = Filme(titulo: "Regresso do mal", descricao: "Descrição 8", imagem: #imageLiteral(resourceName: "filme8"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "Tarzan", descricao: "descricao 9", imagem: #imageLiteral(resourceName: "filme9"))
+        filme = Filme(titulo: "Tarzan", descricao: "Descrição 9", imagem: #imageLiteral(resourceName: "filme9"))
         filmes.append(filme)
         
-        filme = Filme(titulo: "Hardcore", descricao: "descricao 10", imagem: #imageLiteral(resourceName: "filme10"))
+        filme = Filme(titulo: "Hardcore", descricao: "Descrição 10", imagem: #imageLiteral(resourceName: "filme10"))
         filmes.append(filme)
         
     }
@@ -60,14 +62,30 @@ class ViewController: UITableViewController {
         let filme = filmes[indexPath.row]
         let celulaReuso = "celulaReuso"
         
-        let celula = tableView.dequeueReusableCell(withIdentifier: celulaReuso, for: indexPath)
-        celula.textLabel?.text = filme.titulo
-        celula.imageView?.image = filme.imagem
+        let celula = tableView.dequeueReusableCell(withIdentifier: celulaReuso, for: indexPath) as! FilmeCelula
+        celula.filmeImageView.image = filme.imagem
+        celula.tituloLabel.text = filme.titulo
+        celula.descricaoLabel.text = filme.descricao
+        
+        //areedondar as imagens
+        celula.filmeImageView.layer.cornerRadius = 40
+        celula.filmeImageView.clipsToBounds = true
+        
+        /*celula.textLabel?.text = filme.titulo
+        celula.imageView?.image = filme.imagem*/
         
         return celula
+        
     }
     
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalheFilme" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let filmeSelecionado = self.filmes[indexPath.row]
+                let viewControllerDestino = segue.destination as! DetalhesFilmeViewController
+                viewControllerDestino.filme = filmeSelecionado
+            }
+        }
+    }
 }
 
